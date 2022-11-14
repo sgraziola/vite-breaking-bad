@@ -21,6 +21,10 @@ export default {
             <div class="total_found">
                 <span>Found 62 characters</span>
             </div>
+            <div class="loader" v-show="store.characters < 62">
+                <img src="/breaking-bad-logo-png-transparent.png" alt="">
+                <p>Attendere! Caricamento Personaggi...</p>
+            </div>
             <div class="row row-cols-5 g-4">
                 <CharacterItem :character="character" v-for="character in store.characters" />
             </div>
@@ -42,6 +46,17 @@ export default {
             margin: 1rem 0;
             font-size: smaller;
             font-weight: bolder;
+        }
+
+        .loader {
+            color: black;
+            height: 100vh;
+            text-align: center;
+            margin-top: 15rem;
+
+            img {
+                width: 150px;
+            }
         }
     }
 }
