@@ -1,9 +1,9 @@
 <script>
 import axios from 'axios'
-import { store } from './store.js'
 import AppHeader from './components/AppHeader.vue'
 import AppMain from './components/AppMain.vue'
 import AppFooter from './components/AppFooter.vue'
+import { store } from './store.js'
 
 export default {
   name: 'App',
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      store
+      store,
     }
   },
   methods: {
@@ -22,8 +22,7 @@ export default {
       axios.get(url)
         .then(response => {
           console.log(response);
-          this.store.characters = response.data.results
-          this.store.info = response.data.info
+          this.store.characters = response.data
         })
         .catch(err => {
           //console.error(err.message);
