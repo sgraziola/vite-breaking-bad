@@ -6,7 +6,10 @@ export default {
 
 <template>
     <header>
-        <h1>Breaking Bad API</h1>
+        <div class="logo d-flex">
+            <img src="/breaking-bad-logo-png-transparent.png" alt="">
+            <h1>Breaking Bad API</h1>
+        </div>
         <div class="container">
             <select class="form-select my_form" aria-label="select cat">
                 <option selected>Select category</option>
@@ -19,9 +22,20 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.my_form {
-    width: auto;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
+header {
+    .logo {
+        img {
+            height: 40px;
+            align-self: center;
+        }
+
+        padding-left: 1rem;
+    }
+
+    .my_form {
+        width: auto;
+        margin-top: 3rem;
+        margin-bottom: 1rem;
+    }
 }
 </style>
