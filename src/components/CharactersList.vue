@@ -19,7 +19,7 @@ export default {
     <section class="characters">
         <div class="container">
             <div class="total_found">
-                <span>Found 62 characters</span>
+                <span>Found {{ store.characters.length }} characters</span>
             </div>
             <div class="loader" v-show="store.characters < 62">
                 <img src="/breaking-bad-logo-png-transparent.png" alt="">
