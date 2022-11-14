@@ -21,5 +21,7 @@ export default {
 <style lang="scss" scoped>
 .my_form {
     width: auto;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
 }
 </style>
