@@ -9,7 +9,7 @@ export default {
     },
     data() {
         return {
-            store
+            store,
         }
     }
 }
@@ -19,9 +19,9 @@ export default {
     <section class="characters">
         <div class="container">
             <div class="total_found">
-                <span>Found 62 characters</span>
+                <span>Found {{ store.characters.length }} characters</span>
             </div>
-            <div class="loader" v-show="store.characters < 62">
+            <div class="loader" v-show="store.characters.length < 62">
                 <img src="/breaking-bad-logo-png-transparent.png" alt="">
                 <p>Attendere! Caricamento Personaggi...</p>
             </div>
