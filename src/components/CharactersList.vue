@@ -2,13 +2,14 @@
 import { store } from '../store.js'
 import CharacterItem from './CharacterItem.vue'
 import TotalFound from './TotalFound.vue'
-import LoadingItem from './LoadingItem.vue'
+import LoaderItem from './LoaderItem.vue'
 
 export default {
     name: 'CharactersList',
     components: {
         CharacterItem,
-        TotalFound
+        TotalFound,
+        LoaderItem
     },
     data() {
         return {
@@ -19,16 +20,16 @@ export default {
 </script>
 
 <template>
-    <section class="characters" v-if="!store.loading">
+    <section class="characters">
         <div class="container">
 
             <TotalFound />
-            <div class="row row-cols-5 g-4">
+            <div class="row row-cols-5 g-4" v-if="!store.loading">
                 <CharacterItem :character="character" v-for="character in store.characters" />
             </div>
+            <LoaderItem v-else />
         </div>
     </section>
-    <LoadingItem v-else />
 </template>
 
 <style lang="scss" scoped>
