@@ -11,6 +11,9 @@ export default {
     methods: {
         changeCategory() {
             console.log(this.store.category);
+            if (this.store.category === "Select category") {
+                this.store.category = ""
+            }
             const catUrl = `${this.store.apiUrl}?category=${this.store.category}`
             console.log(catUrl);
             axios.get(catUrl)
@@ -21,6 +24,7 @@ export default {
                     console.log(err.message);
                     this.store.error = err.message
                 })
+
         }
     }
 }
