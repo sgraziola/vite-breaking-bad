@@ -23,6 +23,7 @@ export default {
         .then(response => {
           console.log(response);
           this.store.characters = response.data
+          this.store.loading = false
         })
         .catch(err => {
           //console.error(err.message);
