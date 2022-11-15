@@ -5,7 +5,11 @@ export default {
 </script>
 
 <template>
-    <footer></footer>
+    <footer>
+        <div class="text-center p-4">
+            <p>Copyright Boolean 2022</p>
+        </div>
+    </footer>
 </template>
 
 <style lang="scss" scoped>
