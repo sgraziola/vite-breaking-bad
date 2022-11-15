@@ -1,6 +1,28 @@
 <script>
+import axios from 'axios';
+import { store } from '../store';
 export default {
     name: 'AppHeader',
+    data() {
+        return {
+            store
+        }
+    },
+    methods: {
+        changeCategory() {
+            console.log(this.store.category);
+            const catUrl = `${this.store.apiUrl}?category=${this.store.category}`
+            console.log(catUrl);
+            axios.get(catUrl)
+                .then(resp => {
+                    console.log(resp);
+                    this.store.characters = resp.data
+                }).catch(err => {
+                    console.log(err.message);
+                    this.store.error = err.message
+                })
+        }
+    }
 }
 </script>
 
@@ -11,11 +33,11 @@ export default {
             <h1>Breaking Bad API</h1>
         </div>
         <div class="container">
-            <select class="form-select my_form" aria-label="select cat">
+            <select class="form-select my_form" aria-label="select cat" v-model="store.category"
+                @change="changeCategory">
                 <option selected>Select category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
+                <option value="breaking+bad">Breaking Bad</option>
+                <option value="better+call+saul">Better Call Saul</option>
             </select>
         </div>
     </header>

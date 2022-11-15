@@ -21,10 +21,10 @@ export default {
             <div class="total_found">
                 <span>Found {{ store.characters.length }} characters</span>
             </div>
-            <div class="loader" v-show="store.characters.length < 62">
+            <!-- <div class="loader">
                 <img src="/breaking-bad-logo-png-transparent.png" alt="">
                 <p>Attendere! Caricamento Personaggi...</p>
-            </div>
+            </div> -->
             <div class="row row-cols-5 g-4">
                 <CharacterItem :character="character" v-for="character in store.characters" />
             </div>
